@@ -1,40 +1,50 @@
 #include "Car.h"
 
-std::string CarPartsFactory::getName()
+void Car::drive()
 {
-    return "Car";
-}
-int CarPartsFactory::getQtyOfWheels()
-{
-    return 4;
+    int speed = engine->getSpeed(*fuel);
+    if (speed > wheels->getMaxSpeed()) {
+        throw "WHEELS FELL OFF";
+    }
 }
 
-Engine* GasolineCarPartsFactory::createEngine() 
+void Car::info()
+{
+    system("cls");
+    std::cout << "Car" << std::endl;
+    engine->info();
+    fuel->info();
+    wheels->info();
+    //std::cout << std::endl;
+    //system("pause");
+}
+
+Engine* GasolineCarPartsFactory::createEngine()
 {
     return new StandardGasolineEngine();
 }
 
-Fuel* GasolineCarPartsFactory::createFuel(int volume) 
+Fuel* GasolineCarPartsFactory::createFuel(int volume)
 {
     return new Gasoline(volume);
 }
 
-Wheels* GasolineCarPartsFactory::createWheels() 
+Wheels* GasolineCarPartsFactory::createWheels()
 {
     return new StandardWheels();
 }
 
-Engine* DieselCarPartsFactory::createEngine() 
+Engine* DieselCarPartsFactory::createEngine()
 {
     return new StandardDieselEngine();
 }
 
-Fuel* DieselCarPartsFactory::createFuel(int volume) 
+Fuel* DieselCarPartsFactory::createFuel(int volume)
 {
     return new Diesel(volume);
 }
 
-Wheels* DieselCarPartsFactory::createWheels() 
+Wheels* DieselCarPartsFactory::createWheels()
 {
     return new SpeedWheels();
 }

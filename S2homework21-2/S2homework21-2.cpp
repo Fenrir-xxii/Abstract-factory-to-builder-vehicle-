@@ -1,7 +1,5 @@
 #include <iostream>
 #include "Car.h"
-#include "Motorbike.h"
-#include "Truck.h"
 
 
 void ShowConsoleCursor(bool showFlag)
@@ -15,17 +13,15 @@ void ShowConsoleCursor(bool showFlag)
     SetConsoleCursorInfo(out, &cursorInfo);
 }
 
-void clientCode(VehiclePartsFactory* factory)
+void clientCode(CarPartsFactory* factory)
 {
     try {
-        Vehicle vehicle(factory->createEngine(),
+        Car car(factory->createEngine(),
             factory->createWheels(),
-            factory->createFuel(100),
-            factory->getName(),
-            factory->getQtyOfWheels());
+            factory->createFuel(100));
         system("cls");
-        vehicle.info();
-        vehicle.drive();
+        car.info();
+        car.drive();
         std::cout << "All OK" << std::endl << std::endl;
         system("pause");
         system("cls");
@@ -33,8 +29,6 @@ void clientCode(VehiclePartsFactory* factory)
     catch (const char* e) {
         std::cout << "Error" << std::endl;
         std::cout << e << std::endl;
-        system("pause");
-        system("cls");
     }
     delete factory;
 };
@@ -43,7 +37,7 @@ int main()
 {
     ShowConsoleCursor(false);
 
-    Menu menu({ "Gasoline car", "Diesel car", "Electric car", "Hybrid car", "Gasoline motorbike", "Diesel motorbike" , "Electric motorbike", "Diesel truck" });
+    Menu menu({ "Gasoline car", "Diesel car", "Electric car", "Hybrid car" });
     int key = -1;
     int selection = -1;
     int userChoice = -1;
@@ -64,7 +58,7 @@ int main()
             break;
         case ENTER:
             userChoice = menu.getSelectedOption();
-            VehiclePartsFactory* factory;
+            CarPartsFactory* factory;
             try {
                 switch (userChoice) {
                 case 0:
@@ -83,22 +77,6 @@ int main()
                     factory = new HybridCarPartsFactory();
                     system("cls");
                     break;
-                case 4:
-                    factory = new GasolineMotorbikePartsFactory();
-                    system("cls");
-                    break;
-                case 5:
-                    factory = new DieselMotorbikePartsFactory();
-                    system("cls");
-                    break;
-                case 6:
-                    factory = new ElectricMotorbikePartsFactory();
-                    system("cls");
-                    break;
-                case 7:
-                    factory = new DieselTruckPartsFactory();
-                    system("cls");
-                    break;
                 default:
                     throw "Not implemented type ";
                 }
@@ -115,6 +93,8 @@ int main()
             break;
         }
     }
+
+
 
     return 0;
 };

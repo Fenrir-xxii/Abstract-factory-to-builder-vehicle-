@@ -2,12 +2,12 @@
 #include <iostream>
 #include <string>
 
-class Fuel 
+class Fuel
 {
 protected:
     int volume;
 public:
-    Fuel(int volume) 
+    Fuel(int volume)
     {
         this->volume = volume;
     }
@@ -18,7 +18,7 @@ public:
     virtual std::string getTypeName() = 0;
 };
 
-class Gasoline : public Fuel 
+class Gasoline : public Fuel
 {
 public:
     Gasoline(int volume) : Fuel(volume) {}
@@ -26,7 +26,7 @@ public:
     std::string getTypeName() override;
 };
 
-class Diesel : public Fuel 
+class Diesel : public Fuel
 {
 public:
     Diesel(int volume) : Fuel(volume) {}

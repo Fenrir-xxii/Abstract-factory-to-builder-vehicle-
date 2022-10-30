@@ -23,12 +23,6 @@ public:
     int getSpeed(Fuel& fuel) override;
 };
 
-class TurboV8DieselEngine : public Engine {
-public:
-    std::string getName() override;
-    int getSpeed(Fuel& fuel) override;
-};
-
 class StandardElectricEngine : public Engine {
 public:
     std::string getName() override;

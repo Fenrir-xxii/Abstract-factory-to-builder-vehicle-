@@ -2,12 +2,12 @@
 
 std::string StandardWheels::getName()
 {
-    return "Standard wheels";
+	return "Standard wheels";
 }
 
 int StandardWheels::getMaxSpeed()
 {
-    return 100;
+	return 100;
 };
 
 std::string SpeedWheels::getName()
@@ -18,14 +18,4 @@ std::string SpeedWheels::getName()
 int SpeedWheels::getMaxSpeed()
 {
 	return 200;
-};
-
-std::string ReinforcedWheels::getName()
-{
-	return "Reinforced wheels";
-}
-
-int ReinforcedWheels::getMaxSpeed()
-{
-	return 220;
 };

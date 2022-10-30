@@ -22,7 +22,7 @@ std::string Gasoline::getTypeName()
     return "GASOLINE";
 };
 
-std::string Diesel::getTypeName() 
+std::string Diesel::getTypeName()
 {
     return "DIESEL";
 };

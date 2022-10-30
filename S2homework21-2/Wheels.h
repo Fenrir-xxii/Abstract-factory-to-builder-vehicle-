@@ -2,11 +2,9 @@
 #include <iostream>
 #include <string>
 
-class Wheels 
-{
+class Wheels {
 public:
-    void info() 
-    {
+    void info() {
         std::cout << getName() << " max speed " << std::to_string(getMaxSpeed()) << std::endl;
     }
 
@@ -14,22 +12,13 @@ public:
     virtual int getMaxSpeed() = 0;
 };
 
-class StandardWheels : public Wheels 
-{
+class StandardWheels : public Wheels {
 public:
     std::string getName() override;
     int getMaxSpeed() override;
 };
 
-class SpeedWheels : public Wheels 
-{
-public:
-    std::string getName() override;
-    int getMaxSpeed() override;
-};
-
-class ReinforcedWheels : public Wheels
-{
+class SpeedWheels : public Wheels {
 public:
     std::string getName() override;
     int getMaxSpeed() override;
