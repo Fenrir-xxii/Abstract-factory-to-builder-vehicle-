@@ -1,3 +1,5 @@
 # PATTERN: 
-Abstract factory 
+Abstract factory   
 vehicle
+
+![alt text](Images/diagram.png "diagram")
