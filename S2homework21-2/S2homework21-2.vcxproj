@@ -127,24 +127,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Car.cpp" />
-    <ClCompile Include="Console.cpp" />
-    <ClCompile Include="Engine.cpp" />
-    <ClCompile Include="Fuel.cpp" />
-    <ClCompile Include="Menu.cpp" />
-    <ClCompile Include="S2homework21-2.cpp" />
-    <ClCompile Include="Wheels.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Car.h" />
-    <ClInclude Include="console.h" />
-    <ClInclude Include="Engine.h" />
-    <ClInclude Include="Fuel.h" />
-    <ClInclude Include="Menu.h" />
-    <ClInclude Include="Wheels.h" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="..\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Boat.h" />
+    <ClInclude Include="..\Car.h" />
+    <ClInclude Include="..\console.h" />
+    <ClInclude Include="..\Menu.h" />
+    <ClInclude Include="..\Motorbike.h" />
+    <ClInclude Include="..\Vehicle.h" />
+    <ClInclude Include="..\VehicleMainParts.h" />
+    <ClInclude Include="..\VehicleOptionalParts.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Boat.cpp" />
+    <ClCompile Include="..\Car.cpp" />
+    <ClCompile Include="..\Console.cpp" />
+    <ClCompile Include="..\Menu.cpp" />
+    <ClCompile Include="..\Motorbike.cpp" />
+    <ClCompile Include="..\S2homework21-2.cpp" />
+    <ClCompile Include="..\Vehicle.cpp" />
+    <ClCompile Include="..\VehicleMainParts.cpp" />
+    <ClCompile Include="..\VehicleOptionalParts.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
